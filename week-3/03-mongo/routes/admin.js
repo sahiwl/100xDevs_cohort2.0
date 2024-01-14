@@ -40,10 +40,10 @@ router.post('/courses', adminMiddleware, async (req, res) => {
 
 router.get('/courses', adminMiddleware, async (req, res) => {
     // Implement fetching all courses logic
-    const res = await Course.find({});
+    const resp = await Course.find({});
 
     res.json({
-        courses: res
+        courses: resp
     })
 });
 

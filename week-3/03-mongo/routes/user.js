@@ -5,14 +5,14 @@ const { User, Course } = require("../db");
 const { default: mongoose } = require("mongoose");
 
 // User Routes
-router.post('/signup', async (req, res) => {
+router.post('/signup',  (req, res) => {
     // Implement user signup logic
     const username = req.body.username;
     const password = req.body.password;
 
-    const user = await User.create({
-        username: username,
-        password: password
+     User.create({  
+        username,
+        password,
     })
 
     res.json({
@@ -26,7 +26,7 @@ router.get('/courses', async (req, res) => {
     const resp = await Course.find({})
 res.json({
     courses: resp
-})
+})   
 
 });
 
